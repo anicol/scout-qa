@@ -1,0 +1,39 @@
+# Scout QA Autonomy Configuration
+# Controls what actions agents take without asking.
+#
+# Modes:
+#   autonomous        — Agent executes without asking (default for QA — safe actions)
+#   requires_approval — Agent shows the action and asks before executing
+#   disabled          — Agent skips the action silently
+#
+# QA actions are generally safe (read code, run tests, write test files).
+# Default: all actions autonomous.
+
+autonomous:
+  risk-analyzer:
+    - analyze-diff         # Read git diff and score risk
+    - categorize-files     # Categorize changed files
+    - match-patterns       # Match security/payment/critical patterns
+  test-runner:
+    - run-tests            # Run test suite
+    - run-affected-tests   # Run tests for changed files
+  coverage-checker:
+    - run-coverage         # Run tests with coverage
+    - parse-report         # Read coverage reports
+  test-writer:
+    - read-source          # Read source files to understand code
+    - read-tests           # Read existing tests for conventions
+  pre-push-gate:
+    - run-lint             # Run linter
+    - run-typecheck        # Run type checker
+    - run-tests            # Run affected tests
+
+requires_approval:
+  test-writer:
+    - write-test-file      # Create new test files
+    - modify-test-file     # Modify existing test files
+  # Uncomment to require approval before running tests:
+  # test-runner:
+  #   - run-tests
+
+disabled: {}

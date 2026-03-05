@@ -1,0 +1,28 @@
+# Scout QA Risk Configuration
+# Customize how the risk analyzer scores your changes.
+
+# Category weights — higher weight = more risk points when files in that category change.
+# Default weights are used if this file is absent.
+risk_weights:
+  api: 2.0        # API/endpoint changes
+  logic: 1.5      # Business logic
+  ui: 1.0         # UI components
+  config: 0.8     # Configuration files
+  infra: 0.3      # CI/CD, Docker, deployment
+  test: 0.1       # Test files
+  docs: 0.1       # Documentation
+
+# How many total changed lines (additions + deletions) before the
+# "large change" factor kicks in.
+large_change_threshold: 500
+
+# Additional security-sensitive patterns beyond the defaults.
+# Uses glob-style matching against file paths.
+# extra_security_patterns:
+#   - "**/secrets/**"
+#   - "**/permissions/**"
+
+# Additional payment-related patterns beyond the defaults.
+# extra_payment_patterns:
+#   - "**/pricing/**"
+#   - "**/refund**"

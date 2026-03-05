@@ -1,0 +1,12 @@
+{
+  "name": "scout-qa",
+  "description": "QA agents for Claude Code. Smart test runner, coverage analysis, test generation, and pre-push quality gates. Works with any language and test framework.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Scout AI",
+    "url": "https://scoutai.dev"
+  },
+  "repository": "https://github.com/anicol/scout-qa",
+  "license": "MIT",
+  "keywords": ["qa", "testing", "coverage", "test-runner", "quality", "pre-push", "ci"]
+}

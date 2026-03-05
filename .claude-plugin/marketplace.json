@@ -1,0 +1,25 @@
+{
+  "name": "scout-qa",
+  "owner": {
+    "name": "Scout AI",
+    "email": "hello@scoutai.dev"
+  },
+  "metadata": {
+    "description": "Agentic QA pipeline for Claude Code",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "scout-qa",
+      "source": "./scout-qa",
+      "description": "QA agents for Claude Code. Risk scoring, smart test running, coverage on changed lines, test generation, and pre-push quality gates.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Scout AI"
+      },
+      "repository": "https://github.com/anicol/scout-qa",
+      "license": "MIT",
+      "keywords": ["qa", "testing", "coverage", "test-runner", "quality", "pre-push", "ci", "risk"]
+    }
+  ]
+}

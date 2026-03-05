@@ -17,10 +17,13 @@ The pipeline adapts to risk: a 2/10 docs change gets a quick test run. A 9/10 au
 ## Quick Start
 
 ```bash
-# Install the plugin
-claude plugin add anicol/scout-qa
+# Add the marketplace
+claude plugin marketplace add anicol/scout-qa
 
-# Initialize context files in your project
+# Install the plugin
+claude plugin install scout-qa
+
+# Initialize context files in your project (inside Claude Code)
 /scout:init
 
 # Wire into your git pipeline

@@ -31,7 +31,6 @@ Wire Scout QA into your git pipeline. Installs git hooks (pre-commit, pre-push) 
 ### 3. Claude Code Hooks (`.claude/settings.local.json`)
 - **Auto-test on edit**: After Claude edits a source file, automatically runs the corresponding test file
 - **Post-commit QA suggestion**: After `git commit` via Bash, suggests running `/scout:test`
-- **Session QA reminder**: When Claude stops after writing code, reminds about the QA pipeline
 
 ## Steps
 
@@ -99,16 +98,6 @@ Read `.claude/settings.local.json` if it exists. Merge in the Scout hooks:
           }
         ]
       }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "Check if this conversation involved editing source code files (not test files, not config, not docs). If yes, respond with: '[Scout QA] Source code was modified. Consider running /scout:test or /scout:pre-push before pushing.' If no source code was edited, respond with nothing."
-          }
-        ]
-      }
     ]
   }
 }
@@ -140,7 +129,6 @@ Git Hooks:
 Claude Code Hooks:
   PostToolUse (Edit/Write) ......... Auto-run affected tests after edits
   PostToolUse (Bash/git commit) .... Suggest /scout:test after commits
-  Stop ............................. QA reminder after code changes
 
 Pre-Push Mode: fast (direct tools, no AI)
   Switch to smart mode: export SCOUT_MODE=smart

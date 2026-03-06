@@ -8,5 +8,28 @@
   },
   "repository": "https://github.com/anicol/scout-qa",
   "license": "MIT",
-  "keywords": ["qa", "testing", "coverage", "test-runner", "quality", "pre-push", "ci"]
+  "keywords": ["qa", "testing", "coverage", "test-runner", "quality", "pre-push", "ci"],
+  "commands": {
+    "init": "./commands/init.md",
+    "risk": "./commands/risk.md",
+    "test": "./commands/test.md",
+    "coverage": "./commands/coverage.md",
+    "write-tests": "./commands/write-tests.md",
+    "pre-push": "./commands/pre-push.md",
+    "full-check": "./commands/full-check.md",
+    "install-hooks": "./commands/install-hooks.md",
+    "doctor": "./commands/doctor.md",
+    "status": "./commands/status.md"
+  },
+  "agents": {
+    "risk-analyzer": "./agents/risk-analyzer.md",
+    "test-runner": "./agents/test-runner.md",
+    "coverage-checker": "./agents/coverage-checker.md",
+    "test-writer": "./agents/test-writer.md",
+    "pre-push-gate": "./agents/pre-push-gate.md"
+  },
+  "skills": {
+    "qa-context-loader": "./skills/qa-context-loader/SKILL.md",
+    "failure-patterns": "./skills/failure-patterns/SKILL.md"
+  }
 }
